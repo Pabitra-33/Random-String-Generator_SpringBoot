@@ -24,11 +24,13 @@ public class RandomStringController {
 	@Autowired
 	private final RandomStringService randomStringService;
 
-	//constructor injection
+	//performed constructor injection
 	public RandomStringController(RandomStringService randomStringService) {
 		this.randomStringService = randomStringService;
 	}
 
+	
+	//generating the strings from the query parameters
 	@GetMapping("/randomString")
 	@Operation(summary = "Generate Random String (GET)", description = "Generate using query params")
 	public Map<String, String> getRandomString(@RequestParam(defaultValue = "10") int length,
@@ -42,6 +44,8 @@ public class RandomStringController {
 		return response;
 	}
 
+	
+	//generating random strings from the JSON body
 	@PostMapping("/randomString")
 	@Operation(summary = "Generate Random String (POST)", description = "Generate using JSON body")
 	public Map<String, String> getRandomStringPost(@RequestBody RandomStringRequest request) {
