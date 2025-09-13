@@ -9,6 +9,7 @@ import random_string_generator.exception.InvalidInputException;
 @Service
 public class RandomStringService {
 
+	//taken the service class to write the business logic to generate the random strings.
 	private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	private static final String NUMBERS = "0123456789";
 	private static final String SYMBOLS = "!@#$%^&*()-_=+<>?";
